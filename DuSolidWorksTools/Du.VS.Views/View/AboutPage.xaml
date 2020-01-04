@@ -1,0 +1,87 @@
+﻿<core:BaseDialogWindow x:Class="Du.VS.Views.View.AboutPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                          xmlns:local="clr-namespace:Du.VS.Views.View"
+              xmlns:res="clr-namespace:Du.VS.Languages;assembly=Du.VS.Languages"
+                        xmlns:core="clr-namespace:Du.VS.Core;assembly=Du.VS.Core"
+                       
+             mc:Ignorable="d" 
+             d:DesignHeight="445"  Closing="BaseDialogWindow_Closing" ResizeMode="NoResize" d:DesignWidth="630" Width="630" Height="445" MinWidth="630" MinHeight="445" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="192"/>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="108.8"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="291.2"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="pack://application:,,,/Du.VS.Views;component/Resources/ChairPic.jpg" Grid.ColumnSpan="3" Grid.RowSpan="4">
+        </Image>
+        <Label FontSize="20" Margin="60,10,10,140" FontWeight="Heavy" Foreground="Black" Grid.ColumnSpan="2" Grid.Row="0">DuSolidWorks</Label>
+        <Label FontSize="12" Margin="60,50,10,110"  Foreground="Black" Grid.ColumnSpan="2" Grid.Row="0" Content="{x:Static res:Lang.AboutPage_Description}"></Label>
+        <ToolBarOverflowPanel Margin="60,80,10,80">
+            <Button Margin="5,0"  Width="32" Click="Button_Click">
+                <Image Margin="-2" Source="pack://application:,,,/Du.VS.Views;component/Resources/github.png" ToolTip="Github"></Image>
+            </Button>
+
+            <Button Margin="0,0"  Click="Button_Click_1">
+                <Image Margin="-2" Source="pack://application:,,,/Du.VS.Views;component/Resources/HiBrowser.png" ToolTip="Blog"></Image>
+            </Button>
+        </ToolBarOverflowPanel>
+
+        <StackPanel Margin="0,10,0,0" Grid.Row="2" Grid.RowSpan="2" Grid.Column="2">
+            <Label FontSize="15" Content="{x:Static res:Lang.AboutPage_ThirdParty}"></Label>
+            <Label FontSize="10" >
+                <Hyperlink NavigateUri="https://github.com/AngleSharp/AngleSharp/blob/master/LICENSE">1.AngleSharp</Hyperlink>
+            </Label>
+            <Label FontSize="10">
+                <Hyperlink NavigateUri="https://licenses.nuget.org/MS-PL">2.Extended.Wpf.Toolkit</Hyperlink>
+            </Label>
+            <Label FontSize="10">
+                <Hyperlink NavigateUri="https://licenses.nuget.org/Apache-2.0">3.Microsoft.CodeAnalysis.CSharp</Hyperlink>
+            </Label>
+            <Label>
+                <Hyperlink FontSize="10" NavigateUri="https://licenses.nuget.org/Apache-2.0">4.Microsoft.VisualStudio.LanguageServices</Hyperlink>
+            </Label>
+            <Label>
+                <Hyperlink FontSize="10" NavigateUri="https://github.com/lbugnion/mvvmlight/blob/master/LICENSE">
+                    5.MvvmLight
+                </Hyperlink>
+            </Label>
+            <Label HorizontalAlignment="Right" FontSize="5" Content="{x:Static res:Lang.AboutPage_PicFrom}"></Label>
+        </StackPanel>
+        <ScrollViewer Grid.Row="0" Margin="0,12,0,0" Grid.Column="2">
+            <StackPanel  >
+                <Label FontSize="17.5" Content="{x:Static res:Lang.AboutPage_MainFeature}"></Label>
+                <Label FontSize="12" Content="{x:Static res:Lang.AboutPage_MF1}"></Label>
+                <Label FontSize="12" Content="{x:Static res:Lang.AboutPage_MF3}"></Label>
+                <Label FontSize="12" Content="{x:Static res:Lang.AboutPage_MF3}"></Label>
+                <Label FontSize="12" Content="{x:Static res:Lang.AboutPage_MF4}"></Label>
+                <Label FontSize="12" Content="{x:Static res:Lang.AboutPage_MF5}"></Label>
+                <Label FontSize="12" Content="{x:Static res:Lang.AboutPage_MF6}"></Label>
+                <Label FontSize="12" Content="{x:Static res:Lang.AboutPage_MF7}"></Label>
+                <Label FontSize="12" Content="{x:Static res:Lang.AboutPage_MF8}"></Label>
+
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel Grid.Row="3" Grid.Column="0">
+            <Label Margin="10,0" Content="{x:Static res:Lang.Message}"></Label>
+            <StackPanel Orientation="Horizontal">
+                <Image ToolTip="Email" Margin="10,0" Width="20" Source="pack://application:,,,/DuSolidWorksTools;component/Resources/Email.png"></Image>
+                <Label>1831197727@qq.com</Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image ToolTip="{x:Static res:Lang.QQGroup}" Margin="10,0" Width="20" Source="pack://application:,,,/DuSolidWorksTools;component/Resources/Group.png"></Image>
+                <Label>715259600</Label>
+            </StackPanel>
+            <Label>感谢妻子Banana的支持</Label>
+        </StackPanel>
+    </Grid>
+</core:BaseDialogWindow>

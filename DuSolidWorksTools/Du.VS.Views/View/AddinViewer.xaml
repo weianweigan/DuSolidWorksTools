@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="Du.View.AddinViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Du.View"
+             xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.14.0"
+               Background="{DynamicResource {x:Static vsshell:VsBrushes.WindowKey}}"
+            Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:wpfTool="http://schemas.xceed.com/wpf/xaml/toolkit"
+          xmlns:res="clr-namespace:Du.VS.Languages;assembly=Du.VS.Languages"
+
+         mc:Ignorable="d"
+             >
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer.Content>
+            <StackPanel ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <TextBlock TextWrapping="Wrap" Name="AdminInfo" Visibility="Collapsed" Text="{x:Static res:Lang.AdminRun}"></TextBlock>
+
+                <GroupBox  Margin="5">
+                    <GroupBox.Header>
+                        <Label FontSize="15" Content="{x:Static res:Lang.AddinView_SolidWorksList}"></Label>
+                    </GroupBox.Header>
+                    <StackPanel>
+                            <ListBox Margin="2,5" ItemsSource="{Binding SolidWorksList}" SelectedIndex="{Binding SolidWorkInfoSelectedIndex}" MinHeight="20"  DisplayMemberPath="KeyName" Grid.Column="0"/>
+                        <!--wpfTool:PropertyGrid Margin="2,5"  ShowAdvancedOptions="False" ShowPreview="False" ShowTitle="False" ShowDescriptionByTooltip="False" ShowSummary="False" ShowSearchBox="False" ShowSortOptions="False"  SelectedObject="{Binding SelectedSoliWorksInfoModel}"/-->
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox   Margin="5">
+                    <GroupBox.Header>
+                        <Label FontSize="15" Content="{x:Static res:Lang.AddinView_SolidWorksAddinList}"></Label>
+                    </GroupBox.Header>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="18*"/>
+                                <ColumnDefinition Width="80"/>
+                            </Grid.ColumnDefinitions>
+                            <ListBox Margin="2,5"  ItemsSource="{Binding AddinList}" SelectedIndex="{Binding AddinSelectedIndex}" MinHeight="20" DisplayMemberPath="Title">
+                            </ListBox>
+                            <StackPanel Grid.Column="1">
+                                <Button Margin="2,5,2,10" Command="{Binding UnLoadAddinCommand}" Content="{x:Static res:Lang.UnInstall}" ToolTip="{x:Static res:Lang.AddinView_UnInstallTip}"/>
+                                <!--Button Margin="2,0,2,10" Command="{Binding ForceUnLoadCommand}" Content="强制卸载" ToolTip="强制删除注册表中关于此插件的信息(慎用)"/-->
+                                <Button Margin="2,0,2,10" Command="{Binding InstallAddinCommand}" Content="{x:Static res:Lang.Install}" ToolTip="{x:Static res:Lang.AddinView_InstallTip}"/>
+                            </StackPanel>
+                        </Grid>
+                        <xctk:PropertyGrid Margin="2,5" ShowAdvancedOptions="False" ShowPreview="False" ShowTitle="False" ShowDescriptionByTooltip="False" ShowSummary="False" ShowSearchBox="False" ShowSortOptions="False"  SelectedObject="{Binding SelectedAddinModel}">
+                        </xctk:PropertyGrid>
+                    </StackPanel>
+                </GroupBox>
+                <!--<Grid Margin="5,5"  >
+            <Expander Header="已安装插件" IsExpanded="True">
+                <StackPanel>
+                    <ScrollViewer>
+                        <DataGrid Margin="2,5" ItemsSource="{Binding AddinList}" AutoGenerateColumns="False" >
+                            <DataGrid.Columns >
+                                -->
+                <!--DataGridCheckBoxColumn Header="是否加载"></-->
+                <!--
+                                <DataGridCheckBoxColumn Header="是否启动时加载" Binding="{Binding AddinStartIp}" IsReadOnly="True"></DataGridCheckBoxColumn>
+                                <DataGridTextColumn Header="名称" Binding="{Binding Title}"  IsReadOnly="True"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Guid" Binding="{Binding GUID}" IsReadOnly="True"></DataGridTextColumn>
+                                <DataGridTextColumn Header="插件路径" Binding="{Binding CodeBase}" IsReadOnly="True"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </ScrollViewer>
+                    
+                    <TextBlock Height="30" Text="{Binding Description}"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+
+                        <Button  Margin="10" Height="30" Width="60" Command="{Binding UnLoadAddinCommand}">卸载</Button>
+                        <Button Margin="10" Height="30" Width="100" Command="{Binding ForceUnLoadCommand}">强制卸载</Button>
+                    </StackPanel>
+                </StackPanel>
+            </Expander>
+        </Grid>
+        <Grid Margin="5,5"  >
+            <Expander Header="我的插件">
+                <DataGrid >
+                    <DataGrid.Columns>
+                        -->
+                <!--DataGridCheckBoxColumn Header="是否加载"></-->
+                <!--
+                        <DataGridTextColumn Header="名字"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Guid"></DataGridTextColumn>
+                        <DataGridTextColumn Header="是否启动时加载"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Expander>
+        </Grid>-->
+            </StackPanel>
+        </ScrollViewer.Content>
+
+    </ScrollViewer>
+
+</UserControl>

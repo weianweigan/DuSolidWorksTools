@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="DuSolidWorksTools.SolidWorksToolBoxControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:DuView="clr-namespace:Du.View"
+             xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.14.0"
+              Background="{DynamicResource {x:Static vsshell:VsBrushes.WindowKey}}"
+              Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
+               xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                                    xmlns:resx="clr-namespace:Du.VS.Languages;assembly=Du.VS.Languages"
+
+        xmlns:wpfTool="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             Name="MyToolWindow" Loaded="MyToolWindow_Loaded">
+    <Grid>
+        <TabControl SelectedIndex="{Binding TabSelectedIndex}">
+            <TabItem ToolTip="SolidWorks">
+                <TabItem.Header>
+                    <Image Source="pack://application:,,,/Du.VS.Views;component/Resources/SolidWorksInfo.png" Height="20"></Image>
+                </TabItem.Header>
+                <DuView:SolidWorksInfoView>
+
+                </DuView:SolidWorksInfoView>
+            </TabItem>
+            <TabItem ToolTip="{x:Static resx:Lang.AddinView}">
+                <TabItem.Header >
+                    <Image Height="20" Source="pack://application:,,,/Du.VS.Views;component/Resources/AddinViewer.png"></Image>
+                </TabItem.Header>
+                <DuView:AddinViewer>
+
+                </DuView:AddinViewer>
+            </TabItem>
+            <TabItem ToolTip="{x:Static resx:Lang.Selection}">
+                <TabItem.Header >
+                    <Image Height="20" Source="pack://application:,,,/Du.VS.Views;component/Resources/Mouse.png"></Image>
+                </TabItem.Header>
+                <DuView:SelectionInfo>
+
+                </DuView:SelectionInfo>
+            </TabItem>
+            <TabItem ToolTip="Api Help">
+                <TabItem.Header>
+                    <Image Height="20" Source="pack://application:,,,/Du.VS.Views;component/Resources/Doc.png"></Image>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85*"/>
+                                <ColumnDefinition Width="60"/>
+                            </Grid.ColumnDefinitions>
+                            <ComboBox IsEditable="True" Grid.Column="0" Height="20"></ComboBox>
+                            <Button Margin="5,2"  Grid.Column="1" ></Button>
+                        </Grid>
+                        <ToolBar  Height="30">
+                            <Button ToolTip="Api主页" Width="20" Height="22">
+                                <Image Source="pack://application:,,,/Du.VS.Views;component/Resources/Home.png"></Image>
+                            </Button>
+                            <Button Width="20" Height="22" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="在浏览器中打开" Command="{Binding OpenInBrowser}">
+                                <Image Source="pack://application:,,,/Du.VS.Views;component/Resources/Browser.png"></Image>
+                            </Button>
+                            <ToggleButton Visibility="Collapsed" Width="20" Height="25" VerticalAlignment="Center" ToolTip="网页视图" IsChecked="{Binding IsBrowserModel}" IsEnabled="{Binding BrowserModelEnable}" Margin="3">
+                                <Image Source="pack://application:,,,/Du.VS.Views;component/Resources/ViewInPanel.png"></Image>
+                            </ToggleButton>
+                            <Separator></Separator>
+                            <Button Width="20" ToolTip="Back" Margin="3,0" Height="22">
+                                <Image Source="pack://application:,,,/Du.VS.Views;component/Resources/Move.png" RenderTransformOrigin="0.5,0.5">
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="180"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+                                </Image>
+                            </Button>
+                            <Button Width="20" ToolTip="Award" Margin="3,0" Height="22">
+                                <Image Source="pack://application:,,,/Du.VS.Views;component/Resources/Move.png"></Image>
+                            </Button>
+                            <Separator></Separator>
+                            <ComboBox Width="60" IsEditable="False" ItemsSource="{Binding ApiVersionList}" SelectedIndex="{Binding SelectedVersionIndex}" SelectedItem="{Binding SelectedVersion}"></ComboBox>
+                        </ToolBar>
+                    </StackPanel>
+                    <DockPanel Grid.Row="1">
+                        <Expander Visibility="Collapsed" DockPanel.Dock="Top" IsExpanded="False" Header="本地信息">
+                            <xctk:PropertyGrid  Margin="2,5,1.714,5" ShowAdvancedOptions="False" ShowPreview="False" ShowTitle="False" ShowDescriptionByTooltip="False" ShowSummary="False" ShowSearchBox="False" ShowSortOptions="False"  SelectedObject="{Binding SelectedSoliWorksApiModel}">
+                            </xctk:PropertyGrid>
+                        </Expander>
+                        <WebBrowser x:Name="ApiBrowser">
+                            
+                        </WebBrowser>
+                    </DockPanel>
+
+
+                </Grid>
+
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Image ToolTip="{x:Static resx:Lang.About}" Height="20" Source="pack://application:,,,/Du.VS.Views;component/Resources/Light.png"></Image>
+                </TabItem.Header>
+                <Grid>
+                    <StackPanel>
+                        <Button Margin="5" Click="Button_Click"> 关于</Button>
+                        <Expander Margin="2,5" Header="{x:Static resx:Lang.InteropDll}">
+                            <StackPanel>
+                                <Label>SolidWorks.Interop.sldworks</Label>
+                                <Label>SolidWorks.Interop.swcommands</Label>
+                                <Label>SolidWorks.Interop.swconst</Label>
+                                <Label>SolidWorks.Interop.swpublished</Label>
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</UserControl>

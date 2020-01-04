@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutPage_Description" xml:space="preserve">
+    <value>Help you develop SolidWorks!</value>
+  </data>
+  <data name="AddinView_SolidWorksList" xml:space="preserve">
+    <value>Native SolidWorks list!</value>
+  </data>
+  <data name="AddinView_SolidWorksAddinList" xml:space="preserve">
+    <value>Installed SolidWorks plugin!</value>
+  </data>
+  <data name="UnInstall" xml:space="preserve">
+    <value>UnInstall</value>
+  </data>
+  <data name="AddinView_Load" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="AdminRun" xml:space="preserve">
+    <value>To get this part of the information, run Visual Studio with administrator privileges!</value>
+  </data>
+  <data name="AddinView_UnInstallTip" xml:space="preserve">
+    <value>Uninstall the currently selected plugin (close SolidWorks before execution)!</value>
+  </data>
+  <data name="AddinView_InstallTip" xml:space="preserve">
+    <value>Sign up for a SolidWorks dll plugin!</value>
+  </data>
+  <data name="RefManager_Title" xml:space="preserve">
+    <value>SolidWork Assembly Manager!</value>
+  </data>
+  <data name="RefManager_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="RefManager_SourceDll" xml:space="preserve">
+    <value>Reference source path!</value>
+  </data>
+  <data name="RefManager_CopyDll" xml:space="preserve">
+    <value>Copy to project path!</value>
+  </data>
+  <data name="RefManager_VersionTip" xml:space="preserve">
+    <value>Current Dll version!</value>
+  </data>
+  <data name="RefManager_IsChoose" xml:space="preserve">
+    <value>Whether to choose!</value>
+  </data>
+  <data name="RefManager_ProjectName" xml:space="preserve">
+    <value>Item Name</value>
+  </data>
+  <data name="RefManager_IsInstall" xml:space="preserve">
+    <value>Is it already installed!</value>
+  </data>
+  <data name="AssemblyInfo" xml:space="preserve">
+    <value>Assembly Info</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>install</value>
+  </data>
+  <data name="SelectionInfo_GetSelectionObj" xml:space="preserve">
+    <value>Get the selected object!</value>
+  </data>
+  <data name="SelectionInfo_GetSelectionInfo" xml:space="preserve">
+    <value>Check the object information!</value>
+  </data>
+  <data name="SWInfo_PCSolidWorks" xml:space="preserve">
+    <value>SolidWorks installed on this computer!</value>
+  </data>
+  <data name="SWInfo_StartSW" xml:space="preserve">
+    <value>Launch selected SolidWorks!</value>
+  </data>
+  <data name="SWInfo_OpenSWFloder" xml:space="preserve">
+    <value>Open the folder where SolidWork is located!</value>
+  </data>
+  <data name="SWInfo_RuningSW" xml:space="preserve">
+    <value>Currently running SolidWorks!</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="AddinView" xml:space="preserve">
+    <value>Plugin Management</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>Select...</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="InteropDll" xml:space="preserve">
+    <value>Embed into the extended namespace!</value>
+  </data>
+  <data name="AboutPage_ThirdParty" xml:space="preserve">
+    <value>Third Party Libraries</value>
+  </data>
+  <data name="AboutPage_PicFrom" xml:space="preserve">
+    <value>Image courtesy of stocksnap.io!</value>
+  </data>
+  <data name="AboutPage_MainFeature" xml:space="preserve">
+    <value>Primary Capability</value>
+  </data>
+  <data name="AboutPage_MF1" xml:space="preserve">
+    <value>1. Rich SolidWorks development templates!</value>
+  </data>
+  <data name="AddinPage_MF2" xml:space="preserve">
+    <value>2.Visual Studio Quick Info Quickly learn about Api information!</value>
+  </data>
+  <data name="AboutPage_MF3" xml:space="preserve">
+    <value>Visual Studio .NET</value>
+  </data>
+  <data name="AboutPage_MF4" xml:space="preserve">
+    <value>4. Right click to view SolidWorks Api Help!</value>
+  </data>
+  <data name="AboutPage_MF5" xml:space="preserve">
+    <value>5. Quickly understand the SolidWorks and its plugins installed on this machine!</value>
+  </data>
+  <data name="AboutPage_MF6" xml:space="preserve">
+    <value>6. SolidWorks assembly reference manager!</value>
+  </data>
+  <data name="AboutPage_MF7" xml:space="preserve">
+    <value>7. Quickly uninstall the plugin installation!</value>
+  </data>
+  <data name="AboutPage_MF8" xml:space="preserve">
+    <value>8. View SolidWorks selection object information!</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="QQGroup" xml:space="preserve">
+    <value>QQ group</value>
+  </data>
+</root>
